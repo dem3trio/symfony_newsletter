@@ -1,6 +1,6 @@
 {
-    "name": "demetrio/symfony_newsletter",
-    "license": "proprietary",
+    "name": "Symfony newsletter",
+    "license": "MIT",
     "type": "project",
     "autoload": {
         "psr-4": {
@@ -8,6 +8,12 @@
             "SymfonyStandard\\": "app/SymfonyStandard/"
         }
     },
+    "authors": [
+        {
+            "name": "Daniel Gonzalez Zaballos",
+            "email": "dgzaballos@gmail.com"
+        }
+    ],
     "require": {
         "php": ">=5.3.9",
         "symfony/symfony": "2.7.*",

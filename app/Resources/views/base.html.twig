@@ -1,13 +1,51 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-GB"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-GB"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-GB"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-GB"> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Symfony2, AngularJs, Newsletters</title>
+
+    {% block stylesheets %}
+        {% stylesheets '@bootstrap_css' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endblock %}
+
+</head>
+
+<body ng-app="App" ng-controller="MainController">
+
+{% block body%}
+
+    {[{ test }]}
+    <div ng-view></div>
+
+{% block javascripts %}
+    {% javascripts
+        '@jquery_js'
+        '@angular_js'
+        '@angular_route'
+        '@bootstrap_js'
+    %}{#output="js/libraries.js"#}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script src="{{ asset('bundles/app/angular/app.js') }}"></script>
+    <script src="{{ asset('bundles/app/angular/controllers/main_controller.js') }}"></script>
+    {# {% javascripts #}
+        {#'bundles/app/angular/*.js'#}
+        {#'bundles/app/angular/controllers/*.js'#}
+    {#output="js/app.js"#}
+    {#%}#}
+    {#<script src="{{ asset_url }}"></script>#}
+    {#{% endjavascripts %}#}
+
+{% endblock %}
+
+{% block inline_javascripts %}{% endblock %}
+{% endblock %}
+</body>
