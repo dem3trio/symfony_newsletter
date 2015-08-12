@@ -1,0 +1,7 @@
+template:
+    resource: "@AppBundle/Resources/config/routing/template.yml"
+    prefix: /template
+
+homepage:
+    path: /
+    defaults: { _controller : AppBundle:Default:index }

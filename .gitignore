@@ -73,3 +73,6 @@
 # Bower assets
 app/Resources/public/bower
 
+# Application templates
+/app/data/templates/*
+!/app/data/templates/.gitkeep

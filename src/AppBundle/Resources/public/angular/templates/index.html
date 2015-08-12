@@ -1,2 +1,13 @@
-{[{ test }]}<br/>
-<button ng-click="change()">Cambia</button>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Plantillas de newsletter</h1>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="template in templateList track by $index">
+                    {[{ template | json }]}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
