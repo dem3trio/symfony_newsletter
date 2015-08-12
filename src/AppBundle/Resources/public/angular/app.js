@@ -17,6 +17,10 @@
                 templateUrl: templatesPath+ '/index.html',
                 controller: 'IndexController'
             }).
+            when('/create_newsletter/:newsletterId', {
+                templateUrl: templatesPath+ '/edit.html',
+                controller: 'EditController'
+            }).
             otherwise({
                 redirectTo: '/index'
             });

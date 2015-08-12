@@ -5,7 +5,11 @@
         '$scope',
         function ($scope)
         {
-            $scope.test = 'Index controller';
+            $scope.test = "Index";
+
+            $scope.change = function() {
+                $scope.changeRoute('#/create_newsletter/2ioj234asb234asr');
+            }
         }
     ]);
 
