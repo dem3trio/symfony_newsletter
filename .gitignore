@@ -66,3 +66,7 @@
 
 # Composer PHAR
 /composer.phar
+
+# Bower assets
+app/Resources/public/bower
+

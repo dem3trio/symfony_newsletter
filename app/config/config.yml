@@ -6,7 +6,7 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: es
 
 framework:
     #esi:             ~
@@ -35,6 +35,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    form:
+        resources: ['AcmeDemoBundle:Form:form-fields.html.twig']
 
 # Assetic Configuration
 assetic:
@@ -42,6 +44,22 @@ assetic:
     use_controller: false
     bundles:        [ ]
     #java: /usr/bin/java
+    assets:
+        angular_js:
+            inputs:
+                - '%kernel.root_dir%/Resources/public/bower/angular/angular.js'
+        angular_route:
+            inputs:
+                - '%kernel.root_dir%/Resources/public/bower/angular-route/angular-route.js'
+        jquery_js:
+            inputs:
+                - '%kernel.root_dir%/Resources/public/bower/jquery/dist/jquery.js'
+        bootstrap_js:
+            inputs:
+                - '%kernel.root_dir%/Resources/public/bower/bootstrap/dist/js/bootstrap.js'
+        bootstrap_css:
+            inputs:
+                - '%kernel.root_dir%/Resources/public/bower/bootstrap/dist/css/bootstrap.css'
     filters:
         cssrewrite: ~
         #closure:
