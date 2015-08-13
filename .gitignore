@@ -56,6 +56,9 @@
 # Assets and user uploads
 /web/bundles/
 /web/uploads/
+/web/css/
+/web/js/
+/web/assetic/
 
 # PHPUnit
 /app/phpunit.xml
@@ -66,3 +69,10 @@
 
 # Composer PHAR
 /composer.phar
+
+# Bower assets
+app/Resources/public/bower
+
+# Application templates
+/app/data/templates/*
+!/app/data/templates/.gitkeep

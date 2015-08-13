@@ -1,0 +1,17 @@
+{
+    "name": "symfony2-newsletters",
+    "description": "Bower configuration for symfony2-newsletters",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "tests",
+        "src"
+    ],
+    "dependencies": {
+        "angular": "~1.4.3",
+        "angular-route" : "1.4.3",
+        "jquery": "http://code.jquery.com/jquery-1.10.1.js",
+        "bootstrap": "^3.3"
+    }
+}

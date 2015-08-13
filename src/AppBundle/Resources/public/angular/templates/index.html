@@ -1,0 +1,16 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Plantillas de newsletter</h1>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="template in templateList track by $index">
+                    <h4 class="list-group-item-heading"><a href="" ng-click="change(template)">{[{ template.name }]}</a></h4>
+                    <p class="list-group-item-text">{[{ template.description }]}</p>
+
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

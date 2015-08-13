@@ -1,0 +1,3 @@
+preview_action:
+  path: /{token}
+  defaults: { _controller: AppBundle:Preview:preview}

@@ -1,0 +1,5 @@
+services:
+
+  app.core.template_manager:
+    class: AppBundle\Core\TemplateManager
+    arguments: [ @service_container ]
