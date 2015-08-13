@@ -2,14 +2,23 @@
     'use strict';
 
     angular.module('App').controller('IndexController', [
-        '$scope', '$templates',
-        function ($scope, $template)
+        '$scope', '$templates', '$session',
+        function ($scope, $template, $session)
         {
             $scope.test         = "Index";
             $scope.templateList = [];
 
-            $scope.change = function() {
-                $scope.changeRoute('#/create_newsletter/2ioj234asb234asr');
+            $scope.change = function(template) {
+                $session.save(template.variables).then(saveSuccess, saveError);
+
+                function saveSuccess() {
+                    console.log("Sesion creada");
+                    $scope.changeRoute('#/create_newsletter/'+template._folder);
+                }
+
+                function saveError() {
+                    console.log("save error");
+                }
             };
 
             $scope.findAllTemplates = function()
@@ -33,7 +42,14 @@
                 }
             };
 
+            $scope.clearSession = function() {
+                $session.clear();
+                console.log("limpiando sesion");
+            };
+
             $scope.findAllTemplates();
+
+            $scope.clearSession();
         }
     ]);
 

@@ -41,7 +41,7 @@ class TemplateManager
 
         /** @var SplFileInfo $file */
         foreach($finder as $file) {
-            array_push($list, $this->getTemplateInfoInPath($file->getBasename()));
+            array_push($list, $this->getTemplateInfoByFolderName($file->getBasename()));
         }
 
         return $list;
@@ -51,7 +51,7 @@ class TemplateManager
      * @param $tplFolderName
      * @return array|null
      */
-    private function getTemplateInfoInPath($tplFolderName)
+    public function getTemplateInfoByFolderName($tplFolderName)
     {
         // Get the template.json path
         $tplDir     = $this->container->getParameter('app.templates_dir');

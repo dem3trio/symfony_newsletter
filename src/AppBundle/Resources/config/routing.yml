@@ -2,6 +2,14 @@ template:
     resource: "@AppBundle/Resources/config/routing/template.yml"
     prefix: /template
 
+preview:
+    resource: "@AppBundle/Resources/config/routing/preview.yml"
+    prefix: /preview
+
+session:
+    resource: "@AppBundle/Resources/config/routing/session.yml"
+    prefix: /session
+
 homepage:
     path: /
     defaults: { _controller : AppBundle:Default:index }

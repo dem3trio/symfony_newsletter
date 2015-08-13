@@ -1,0 +1,12 @@
+session_get:
+  path: /get
+  defaults: { _controller: AppBundle:Session:get}
+
+session_save:
+  path: /save
+  defaults: { _controller: AppBundle:Session:save}
+
+session_clear:
+  path: /clear
+  defaults: { _controller: AppBundle:Session:clear}
+
