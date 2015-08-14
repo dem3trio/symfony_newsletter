@@ -51,6 +51,9 @@ assetic:
         angular_route:
             inputs:
                 - '%kernel.root_dir%/Resources/public/bower/angular-route/angular-route.js'
+        angular_sanitize:
+            inputs:
+                - '%kernel.root_dir%/Resources/public/bower/angular-sanitize/angular-sanitize.js'
         jquery_js:
             inputs:
                 - '%kernel.root_dir%/Resources/public/bower/jquery/dist/jquery.js'

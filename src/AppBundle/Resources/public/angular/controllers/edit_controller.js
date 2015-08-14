@@ -5,7 +5,8 @@
         '$scope',
         '$routeParams',
         '$session',
-        function ($scope, $routeParams, $session)
+        '$sce',
+        function ($scope, $routeParams, $session, $sce)
         {
             $scope.token = $routeParams.newsletterId;
 
@@ -19,8 +20,8 @@
             };
 
             $scope.reloadPreview = function() {
-                console.log($scope.variables);
-                    $scope.token = $routeParams.newsletterId + '?' + new Date().getTime();
+                    var url = $routeParams.newsletterId + '?' + new Date().getTime();
+                    $scope.token = $sce.trustAsResourceUrl(url);
             };
 
             $scope.$watch('variables', function() {

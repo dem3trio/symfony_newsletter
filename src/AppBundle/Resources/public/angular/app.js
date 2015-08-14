@@ -5,7 +5,7 @@
     var baseAngularPath = '/bundles/app/angular';
     var templatesPath   = baseAngularPath + '/templates';
 
-    angular.module('App', ['ngRoute']);
+    angular.module('App', ['ngRoute','ngSanitize']);
 
     angular.module('App').config(['$interpolateProvider', '$routeProvider', function ($interpolateProvider, $routeProvider) {
         // change default characters for interpolateion
