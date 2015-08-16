@@ -54,6 +54,13 @@ assetic:
         angular_sanitize:
             inputs:
                 - '%kernel.root_dir%/Resources/public/bower/angular-sanitize/angular-sanitize.js'
+        angular_ckeditor_js:
+            inputs:
+                - '%kernel.root_dir%/Resources/public/bower/ng-ckeditor/libs/ckeditor/ckeditor.js'
+                - '%kernel.root_dir%/Resources/public/bower/ng-ckeditor/ng-ckeditor.js'
+        angular_ckeditor_css:
+            inputs:
+                - '%kernel.root_dir%/Resources/public/bower/ng-ckeditor/ng-ckeditor.css'
         jquery_js:
             inputs:
                 - '%kernel.root_dir%/Resources/public/bower/jquery/dist/jquery.js'
