@@ -4,8 +4,13 @@ A very simple project to make newsletter based in templates. Using Symfony2, and
 
 ## Changelog
 
-### v1.0.0
-Very basic application
+** New version **
+
+  * Added $sce to trust the preview url
+
+** v1.0.0 **
+
+  * Very basic application
 
 
 ## Instalation
@@ -22,6 +27,13 @@ Install the all the dependencies:
 cd your_install_dir/
 composer install
 bower install
+```
+
+Put each asset in its place
+
+```
+php app/console assets:install
+php app/console assetic:dump
 ```
 
 And done!
