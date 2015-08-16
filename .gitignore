@@ -72,6 +72,7 @@
 
 # Bower assets
 app/Resources/public/bower
+src/AppBundle/Resources/public/bower
 
 # Application templates
 /app/data/templates/*
