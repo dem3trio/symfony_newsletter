@@ -25,5 +25,14 @@
     </div>
 </div>
 <script>
-    jQuery("#iframe").css('height', $(window).height()+'px');
+
+    function resizeIframe() {
+        jQuery("#iframe").css('height', $(window).height()+'px');
+    }
+
+    resizeIframe();
+
+    jQuery(window).on('resize', function(){
+        resizeIframe();
+    });
 </script>

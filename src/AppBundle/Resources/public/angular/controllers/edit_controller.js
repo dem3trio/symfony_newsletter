@@ -11,7 +11,7 @@
             $scope.token = $routeParams.newsletterId;
 
             $scope.editorOptions = {
-                language: 'es',
+                language: 'en',
                 uiColor: '#000000'
             };
 
