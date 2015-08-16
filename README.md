@@ -4,11 +4,15 @@ A very simple project to make newsletter based in templates. Using Symfony2, and
 
 ## Changelog
 
-** New version **
+**v1.1.0**
 
   * Added $sce to trust the preview url
+  * Added directive to switch input type:
+    * Added color type
+    * Added editor type (ckeditor)
+  * Now the preview refreshes after 300ms of stop typing instead of each keypress.
 
-** v1.0.0 **
+**v1.0.0**
 
   * Very basic application
 
@@ -64,8 +68,9 @@ This is a example of the template.json:
   "description": "Description of the template",
   "template_file": "the_name_of_your_template.html.twig",
   "variables": [
-    {"name": "textColor",   "default": "#FF0000" },
-    {"name": "textContent", "default": "Default text" }
+    {"name": "textColor",   "type":"color", "default": "#FF0000" },
+    {"name": "textContent", "type":"text", "default": "Default text" }
+    {"name": "editorContent", "type":"editor", "default": "Default text in the editor" }
   ]
 }
 ```
@@ -80,6 +85,7 @@ template.
 <body>
 
 <p style="color:{{ textColor }}">{{ textContent }}</p>
+{{ editorContent | raw }}
 
 </body>
 </html>
@@ -90,8 +96,6 @@ Add all the variables you need :)
 ## ToDo:
 
   * Allow input types (now only support text):
-    * ckeditor
-    * colorpicker
     * datepicker
     * images
     * repeateable content
