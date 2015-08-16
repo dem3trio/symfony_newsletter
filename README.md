@@ -75,8 +75,8 @@ This is a example of the template.json:
 }
 ```
 
-given that you have set 2 variables in the template.json, `textColor` and `textContent`, you have to include those in your
-template.
+given that you have set 3 variables in the template.json, `textColor`, `textContent` and `editorContent`, you have to include those in your
+template. Note that `editorContent` is a "editor" type, so it has to be filtered with the "raw" option in twig.
 
 ```twig
 <!DOCTYPE html>
@@ -95,7 +95,7 @@ Add all the variables you need :)
 
 ## ToDo:
 
-  * Allow input types (now only support text):
+  * Allow input types:
     * datepicker
     * images
     * repeateable content
@@ -103,4 +103,5 @@ Add all the variables you need :)
   * Allow to send an e-mail to test it
   * Upload new templates with a form.
   * Allow folders (css, images) and download them with the zip file.
+  * Clean symfony code
   * Think more features...
