@@ -8,4 +8,4 @@ CONFIG.templatesPath        = CONFIG.baseAngularPath + '/templates';
 CONFIG.editorTemplatesPath  = CONFIG.templatesPath + '/editor';
 
 // CKEditor configuration
-window.CKEDITOR_BASEPATH    = CONFIG.baseURL + CONFIG.assetsPath + '/bower/ng-ckeditor/libs/ckeditor/';
+window.CKEDITOR_BASEPATH    = CONFIG.baseURL + CONFIG.assetsPath + '/bower/ckeditor/';

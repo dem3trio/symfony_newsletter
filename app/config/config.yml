@@ -56,7 +56,6 @@ assetic:
                 - '%kernel.root_dir%/../src/AppBundle/Resources/public/bower/angular-sanitize/angular-sanitize.js'
         angular_ckeditor_js:
             inputs:
-                - '%kernel.root_dir%/../src/AppBundle/Resources/public/bower/ng-ckeditor/libs/ckeditor/ckeditor.js'
                 - '%kernel.root_dir%/../src/AppBundle/Resources/public/bower/ng-ckeditor/ng-ckeditor.js'
         angular_ckeditor_css:
             inputs:
@@ -70,6 +69,9 @@ assetic:
         bootstrap_css:
             inputs:
                 - '%kernel.root_dir%/../src/AppBundle/Resources/public/bower/bootstrap/dist/css/bootstrap.css'
+        ckeditor_js:
+            inputs:
+                - '%kernel.root_dir%/../src/AppBundle/Resources/public/bower/ckeditor/ckeditor.js'
     filters:
         cssrewrite: ~
         #closure:
