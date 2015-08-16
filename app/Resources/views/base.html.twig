@@ -37,8 +37,9 @@
     %}{#output="js/libraries.js"#}
     <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
-
+    <script src="{{ asset('bundles/app/js/CONFIG.js') }}"></script>
     <script src="{{ asset('bundles/app/angular/app.js') }}"></script>
+    <script src="{{ asset('bundles/app/angular/directives/editorType.js') }}"></script>
     <script src="{{ asset('bundles/app/angular/controllers/main_controller.js') }}"></script>
     <script src="{{ asset('bundles/app/angular/controllers/index_controller.js') }}"></script>
     <script src="{{ asset('bundles/app/angular/controllers/edit_controller.js') }}"></script>

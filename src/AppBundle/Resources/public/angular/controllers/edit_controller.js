@@ -10,6 +10,11 @@
         {
             $scope.token = $routeParams.newsletterId;
 
+            $scope.editorOptions = {
+                language: 'es',
+                uiColor: '#000000'
+            };
+
             $scope.variables = [
                 {name: 'objColor', value: ''},
                 {name: 'objText',  value: ''}

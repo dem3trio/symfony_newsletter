@@ -1,10 +1,6 @@
 (function (window, angular) {
     'use strict';
 
-    // Routes configuration
-    var baseAngularPath = '/bundles/app/angular';
-    var templatesPath   = baseAngularPath + '/templates';
-
     angular.module('App', ['ngRoute','ngSanitize', 'ngCkeditor']);
 
     angular.module('App').config(['$interpolateProvider', '$routeProvider', function ($interpolateProvider, $routeProvider) {
@@ -14,11 +10,11 @@
 
         $routeProvider.
             when('/index', {
-                templateUrl: templatesPath+ '/index.html',
+                templateUrl: CONFIG.templatesPath+ '/index.html',
                 controller: 'IndexController'
             }).
             when('/create_newsletter/:newsletterId', {
-                templateUrl: templatesPath+ '/edit.html',
+                templateUrl: CONFIG.templatesPath+ '/edit.html',
                 controller: 'EditController'
             }).
             otherwise({
