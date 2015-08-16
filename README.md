@@ -61,7 +61,7 @@ This is a example of the template.json:
 given that you have set 2 variables in the template.json, `textColor` and `textContent`, you have to include those in your
 template.
 
-```
+```twig
 <!DOCTYPE html>
 <html>
 <head></head>
