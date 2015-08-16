@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-GB"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-GB"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-GB"> <![endif]-->
@@ -10,11 +10,14 @@
     <title>Symfony2, AngularJs, Newsletters</title>
 
     {% block stylesheets %}
-        {% stylesheets '@bootstrap_css' %}
+        {% stylesheets
+            '@bootstrap_css'
+            '@angular_ckeditor_css'
+        %}
         <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
     {% endblock %}
-
+    <link rel="stylesheet" href="{{ asset('bundles/app/bower/angular-bootstrap-colorpicker/css/colorpicker.css') }}" />
 </head>
 
 <body ng-app="App" ng-controller="MainController">
@@ -24,16 +27,27 @@
     <div ng-view></div>
 
 {% block javascripts %}
+
+    <script>
+        var baseURL = '{{ app.request.getSchemeAndHttpHost() }}';
+    </script>
+    <script src="{{ asset('bundles/app/js/CONFIG.js') }}"></script>
+
     {% javascripts
         '@jquery_js'
         '@angular_js'
         '@angular_route'
+	    '@angular_sanitize'
         '@bootstrap_js'
+        '@ckeditor_js'
+        '@angular_ckeditor_js'
     %}{#output="js/libraries.js"#}
     <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
+    <script src="{{ asset('bundles/app/bower/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js') }}"></script>
 
     <script src="{{ asset('bundles/app/angular/app.js') }}"></script>
+    <script src="{{ asset('bundles/app/angular/directives/editorType.js') }}"></script>
     <script src="{{ asset('bundles/app/angular/controllers/main_controller.js') }}"></script>
     <script src="{{ asset('bundles/app/angular/controllers/index_controller.js') }}"></script>
     <script src="{{ asset('bundles/app/angular/controllers/edit_controller.js') }}"></script>

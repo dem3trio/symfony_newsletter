@@ -42,24 +42,36 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ ]
+    bundles:        [ AppBundle ]
     #java: /usr/bin/java
     assets:
         angular_js:
             inputs:
-                - '%kernel.root_dir%/Resources/public/bower/angular/angular.js'
+                - '%kernel.root_dir%/../src/AppBundle/Resources/public/bower/angular/angular.js'
         angular_route:
             inputs:
-                - '%kernel.root_dir%/Resources/public/bower/angular-route/angular-route.js'
+                - '%kernel.root_dir%/../src/AppBundle/Resources/public/bower/angular-route/angular-route.js'
+        angular_sanitize:
+            inputs:
+                - '%kernel.root_dir%/../src/AppBundle/Resources/public/bower/angular-sanitize/angular-sanitize.js'
+        angular_ckeditor_js:
+            inputs:
+                - '%kernel.root_dir%/../src/AppBundle/Resources/public/bower/ng-ckeditor/ng-ckeditor.js'
+        angular_ckeditor_css:
+            inputs:
+                - '%kernel.root_dir%/../src/AppBundle/Resources/public/bower/ng-ckeditor/ng-ckeditor.css'
         jquery_js:
             inputs:
-                - '%kernel.root_dir%/Resources/public/bower/jquery/dist/jquery.js'
+                - '%kernel.root_dir%/../src/AppBundle/Resources/public/bower/jquery/dist/jquery.js'
         bootstrap_js:
             inputs:
-                - '%kernel.root_dir%/Resources/public/bower/bootstrap/dist/js/bootstrap.js'
+                - '%kernel.root_dir%/../src/AppBundle/Resources/public/bower/bootstrap/dist/js/bootstrap.js'
         bootstrap_css:
             inputs:
-                - '%kernel.root_dir%/Resources/public/bower/bootstrap/dist/css/bootstrap.css'
+                - '%kernel.root_dir%/../src/AppBundle/Resources/public/bower/bootstrap/dist/css/bootstrap.css'
+        ckeditor_js:
+            inputs:
+                - '%kernel.root_dir%/../src/AppBundle/Resources/public/bower/ckeditor/ckeditor.js'
     filters:
         cssrewrite: ~
         #closure:

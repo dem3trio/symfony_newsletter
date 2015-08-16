@@ -1,11 +1,14 @@
 (function (window, angular) {
     'use strict';
 
+    var timeOut = null;
+
     angular.module('App').controller('EditController', [
         '$scope',
         '$routeParams',
         '$session',
-        function ($scope, $routeParams, $session)
+        '$sce',
+        function ($scope, $routeParams, $session, $sce)
         {
             $scope.token = $routeParams.newsletterId;
 
@@ -15,35 +18,41 @@
             ];
 
             $scope.getIframeSrc = function (token) {
-                return 'http://localhost:8000/preview/' + token;
+                return CONFIG.baseURL+ '/preview/' + token;
             };
 
             $scope.reloadPreview = function() {
-                console.log($scope.variables);
-                    $scope.token = $routeParams.newsletterId + '?' + new Date().getTime();
+                    var url = $routeParams.newsletterId + '?' + new Date().getTime();
+                    $scope.token = $sce.trustAsResourceUrl(url);
             };
 
             $scope.$watch('variables', function() {
-                $session.save($scope.variables).then(saveSuccess, saveError);
+                if(timeOut !== null) {
+                    clearTimeout(timeOut);
+                }
+                // Force a 500 milisec timeout to not collapse the server
+                timeOut = setTimeout(function(){
+                    $session.save($scope.variables).then(saveSuccess, saveError);
+                }, 300);
 
                 function saveSuccess() {
                     $scope.reloadPreview();
                 }
 
-                function saveError() {
+                function saveError(error) {
+                    console.log("Error retrieving data");
                     console.log(error);
                 }
             }, true);
 
             $scope.getData = function() {
                 $session.get().then(getSuccess, getError);
-
                 function getSuccess(data) {
-                    console.log(data);
                     $scope.variables = data;
                 }
 
                 function getError(error) {
+                    console.log('Error retrieving data:');
                     console.log(error);
                 }
             };
