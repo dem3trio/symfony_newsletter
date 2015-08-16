@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
     {% endblock %}
-
+    <link rel="stylesheet" href="{{ asset('bundles/app/bower/angular-bootstrap-colorpicker/css/colorpicker.css') }}" />
 </head>
 
 <body ng-app="App" ng-controller="MainController">
@@ -43,6 +43,7 @@
     %}{#output="js/libraries.js"#}
     <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
+    <script src="{{ asset('bundles/app/bower/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js') }}"></script>
 
     <script src="{{ asset('bundles/app/angular/app.js') }}"></script>
     <script src="{{ asset('bundles/app/angular/directives/editorType.js') }}"></script>

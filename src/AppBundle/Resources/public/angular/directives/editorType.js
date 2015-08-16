@@ -8,6 +8,7 @@
 
         var textTemplate    = '/text.html';
         var editorTemplate  = '/ckeditor.html';
+        var colorTemplate   = '/color.html';
 
         var getTemplate = function(contentType) {
             var template = '';
@@ -15,6 +16,9 @@
             switch(contentType) {
                 case 'editor':
                     template = editorTemplate;
+                    break;
+                case 'color':
+                    template = colorTemplate;
                     break;
                 case 'text':
                 default:
@@ -29,7 +33,7 @@
 
         var linker = function(scope, element, attrs) {
             var template = getTemplate(scope.content.type);
-            console.log(template);
+
             Promise.resolve(template).then(function(value) {
                 element.html(value).show();
                 $compile(element.contents())(scope);
