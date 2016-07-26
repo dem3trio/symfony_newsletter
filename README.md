@@ -1,3 +1,5 @@
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/71e53be0-0ad7-4394-b4c0-9865703c93e6/mini.png)](https://insight.sensiolabs.com/projects/71e53be0-0ad7-4394-b4c0-9865703c93e6)
+
 # Symfony Newsletter
 
 A very simple project to make newsletter based in templates. Using Symfony2, and AngularJS
