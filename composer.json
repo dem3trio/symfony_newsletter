@@ -3,10 +3,9 @@
     "description": "Symfony project for creating newsletters from twig templates using symfony2 and angularjs",
     "license": "MIT",
     "type": "project",
-    "version": "1.1.0",
     "autoload": {
         "psr-4": {
-            "": "src/",
+            "src": "src/",
             "SymfonyStandard\\": "app/SymfonyStandard/"
         }
     },
