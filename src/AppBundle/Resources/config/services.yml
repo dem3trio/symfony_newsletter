@@ -3,4 +3,4 @@ services:
   app.core.template_manager:
     class: AppBundle\Core\TemplateManager
     calls:
-      - [setTemplatesDir, ['%%app.templates_dir%%']]
+      - [setTemplatesDir, ['%app.templates_dir%']]
