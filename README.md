@@ -93,7 +93,7 @@ template. Note that `editorContent` is a "editor" type, so it has to be filtered
 
 Add all the variables you need :)
 
-## ToDo:
+## What is comming in next releases:
 
   * Allow input types:
     * datepicker
