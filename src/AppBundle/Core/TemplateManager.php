@@ -53,7 +53,7 @@ class TemplateManager
     /**
      * @return string
      */
-    public function getTemplatesDir(): string
+    public function getTemplatesDir()
     {
         return $this->templatesDir;
     }
@@ -61,7 +61,7 @@ class TemplateManager
     /**
      * @param string $templatesDir
      */
-    public function setTemplatesDir(string $templatesDir)
+    public function setTemplatesDir($templatesDir)
     {
         $this->templatesDir = $templatesDir;
     }
