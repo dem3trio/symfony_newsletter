@@ -1,43 +1,26 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: demetrio
- * Date: 12/08/15
- * Time: 21:24
- */
 
 namespace AppBundle\Core;
 
-
 use Symfony\Component\Finder\Finder;
-use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\Finder\SplFileInfo;
 
 class TemplateManager
 {
     /**
-     * @var Container
+     * @var string
      */
-    private $container;
-
-    /**
-     * @param Container $container
-     */
-    public function __construct(Container $container)
-    {
-        $this->container = $container;
-    }
+    private $templatesDir;
 
     /**
      * @return array
      */
     public function getTemplateList()
     {
-        $templatesDir   = $this->container->getParameter('app.templates_dir');
         $finder         = new Finder();
         $list           = array();
 
-        $finder->directories()->in($templatesDir);
+        $finder->directories()->in($this->getTemplatesDir());
 
         /** @var SplFileInfo $file */
         foreach($finder as $file) {
@@ -54,8 +37,7 @@ class TemplateManager
     public function getTemplateInfoByFolderName($tplFolderName)
     {
         // Get the template.json path
-        $tplDir     = $this->container->getParameter('app.templates_dir');
-        $jsonPath   = $tplDir.'/'.$tplFolderName.'/template.json';
+        $jsonPath   = $this->getTemplatesDir().'/'.$tplFolderName.'/template.json';
         $info       = null;
 
         // get the info if the json exists
@@ -67,5 +49,22 @@ class TemplateManager
 
         return $info;
     }
+
+    /**
+     * @return string
+     */
+    public function getTemplatesDir(): string
+    {
+        return $this->templatesDir;
+    }
+
+    /**
+     * @param string $templatesDir
+     */
+    public function setTemplatesDir(string $templatesDir)
+    {
+        $this->templatesDir = $templatesDir;
+    }
+
 
 }
