@@ -1,4 +1,3 @@
 {
-  "directory": "src/AppBundle/Resources/public/bower",
-  "json": "bower.json"
+  "directory": "src/AppBundle/Resources/public/bower"
 }
