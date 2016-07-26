@@ -1,5 +1,6 @@
 {
     "name": "Symfony newsletter",
+    "description": "Symfony project for creating newsletters from twig templates using symfony2 and angularjs",
     "license": "MIT",
     "type": "project",
     "version": "1.1.0",
@@ -17,9 +18,9 @@
     ],
     "require": {
         "php": ">=5.3.9",
-        "symfony/symfony": "2.7.*",
-        "doctrine/orm": "~2.2,>=2.2.3,<2.5",
-        "doctrine/dbal": "<2.5",
+        "symfony/symfony": "2.8.*",
+        "doctrine/orm": "~2.2,>=2.2.3",
+        "doctrine/dbal": "~2.4",
         "doctrine/doctrine-bundle": "~1.4",
         "symfony/assetic-bundle": "~2.3",
         "symfony/swiftmailer-bundle": "~2.3",
