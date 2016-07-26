@@ -2,31 +2,27 @@
 
 namespace AppBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Class PreviewController
+ * @package AppBundle\Controller
+ */
 class PreviewController extends Controller
 {
+    /**
+     * @param $token
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function previewAction($token)
     {
-        $tManager       = $this->container->get('app.core.template_manager');
-        $templateInfo   = $tManager->getTemplateInfoByFolderName($token);
-
-        $tplFolder = $templateInfo['_folder'];
-        $tplName = '/'.$tplFolder.'/'.$templateInfo['template_file'];
-        $tplDir  = $this->container->getParameter('app.templates_dir');
-
+        $templateInfo  = $this->container->get('app.core.template_manager')->getTemplateInfoByFolderName($token);
         $tplVars = array();
-
         $session_data = $this->get('session')->get('data');
 
         foreach ($templateInfo['variables'] as $variable) {
-
             $tplVars[$variable["name"]] = $variable["default"];
-
-            if($session_data == null) {
+            if(null === $session_data) {
                 continue;
             }
 
@@ -39,7 +35,7 @@ class PreviewController extends Controller
             }
         }
 
-        $this->container->get('twig.loader')->addPath($tplDir);
-        return $this->render($tplName,$tplVars);
+        $this->container->get('twig.loader')->addPath($this->container->getParameter('app.templates_dir'));
+        return $this->render('/'.$templateInfo['_folder'].'/'.$templateInfo['template_file'],$tplVars);
     }
 }

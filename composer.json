@@ -1,5 +1,5 @@
 {
-    "name": "Symfony newsletter",
+    "name": "SymfonyNewsletter",
     "description": "Symfony project for creating newsletters from twig templates using symfony2 and angularjs",
     "license": "MIT",
     "type": "project",
