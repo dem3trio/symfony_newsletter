@@ -65,6 +65,5 @@ class TemplateManager
     {
         $this->templatesDir = $templatesDir;
     }
-
-
+    
 }

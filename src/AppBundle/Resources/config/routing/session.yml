@@ -1,12 +1,15 @@
 session_get:
   path: /get
   defaults: { _controller: AppBundle:Session:get}
+  methods: [POST]
 
 session_save:
   path: /save
   defaults: { _controller: AppBundle:Session:save}
+  methods: [POST]
 
 session_clear:
   path: /clear
   defaults: { _controller: AppBundle:Session:clear}
+  methods: [POST]
 

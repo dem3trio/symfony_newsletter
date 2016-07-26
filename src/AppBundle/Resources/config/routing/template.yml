@@ -1,3 +1,4 @@
 template_list:
   path: /list
   defaults: { _controller: AppBundle:Template:list}
+  methods: [GET]
