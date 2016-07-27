@@ -39,7 +39,6 @@
             }
 
             Promise.resolve(template).then(function(value) {
-                console.log(element.html(value)[0]);
                 $(element.html(value)[0]).show();
                 $compile(element.contents())(scope);
             }, function(value) {
