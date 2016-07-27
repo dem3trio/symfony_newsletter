@@ -4,13 +4,14 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 
 class SessionController extends Controller
 {
-    public function saveAction()
+    public function saveAction(Request $request)
     {
         $params = array();
-        $content = $this->get("request")->getContent();
+        $content = $request->getContent();
         if (!empty($content))
         {
             $params = json_decode($content, true);

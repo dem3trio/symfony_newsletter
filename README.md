@@ -39,7 +39,6 @@ Put each asset in its place
 
 ```
 php app/console assets:install
-php app/console assetic:dump
 ```
 
 And done!
@@ -71,7 +70,7 @@ This is a example of the template.json:
   "template_file": "the_name_of_your_template.html.twig",
   "variables": [
     {"name": "textColor",   "type":"color", "default": "#FF0000" },
-    {"name": "textContent", "type":"text", "default": "Default text" }
+    {"name": "textContent", "type":"text", "default": "Default text" },
     {"name": "editorContent", "type":"editor", "default": "Default text in the editor" }
   ]
 }

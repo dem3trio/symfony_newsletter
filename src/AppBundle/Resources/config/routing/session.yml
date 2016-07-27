@@ -1,7 +1,7 @@
 session_get:
   path: /get
   defaults: { _controller: AppBundle:Session:get}
-  methods: [POST]
+  methods: [GET]
 
 session_save:
   path: /save
