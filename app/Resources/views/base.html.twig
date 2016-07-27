@@ -7,17 +7,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>Symfony2, AngularJs, Newsletters</title>
+    <title>Symfony 3, AngularJs, Newsletters</title>
 
     {% block stylesheets %}
-        {% stylesheets
-            '@bootstrap_css'
-            '@angular_ckeditor_css'
-        %}
-        <link rel="stylesheet" href="{{ asset_url }}" />
-        {% endstylesheets %}
+        <link rel="stylesheet" href="{{ asset('bundles/app/bower/bootstrap/dist/css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/app/bower/ng-ckeditor/ng-ckeditor.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/app/bower/angular-bootstrap-colorpicker/css/colorpicker.css') }}" />
     {% endblock %}
-    <link rel="stylesheet" href="{{ asset('bundles/app/bower/angular-bootstrap-colorpicker/css/colorpicker.css') }}" />
 </head>
 
 <body ng-app="App" ng-controller="MainController">
@@ -33,17 +29,14 @@
     </script>
     <script src="{{ asset('bundles/app/js/CONFIG.js') }}"></script>
 
-    {% javascripts
-        '@jquery_js'
-        '@angular_js'
-        '@angular_route'
-	    '@angular_sanitize'
-        '@bootstrap_js'
-        '@ckeditor_js'
-        '@angular_ckeditor_js'
-    %}{#output="js/libraries.js"#}
-    <script src="{{ asset_url }}"></script>
-    {% endjavascripts %}
+    <script src="{{ asset('bundles/app/bower/angular/angular.js') }}"></script>
+    <script src="{{ asset('bundles/app/bower/angular-route/angular-route.js') }}"></script>
+    <script src="{{ asset('bundles/app/bower/angular-sanitize/angular-sanitize.js') }}"></script>
+    <script src="{{ asset('bundles/app/bower/ng-ckeditor/ng-ckeditor.js') }}"></script>
+    <script src="{{ asset('bundles/app/bower/jquery/dist/jquery.js') }}"></script>
+    <script src="{{ asset('bundles/app/bower/bootstrap/dist/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('bundles/app/bower/ckeditor/ckeditor.js') }}"></script>
+
     <script src="{{ asset('bundles/app/bower/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js') }}"></script>
 
     <script src="{{ asset('bundles/app/angular/app.js') }}"></script>
