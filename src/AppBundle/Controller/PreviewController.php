@@ -19,6 +19,7 @@ class PreviewController extends Controller
         $templateInfo  = $this->container->get('app.core.template_manager')->getTemplateInfoByFolderName($token);
         $tplVars = array();
         $session_data = $this->get('session')->get('data');
+        $this->get('profiler')->disable();
 
         foreach ($templateInfo['variables'] as $variable) {
             $tplVars[$variable["name"]] = $variable["default"];

@@ -1,16 +1,33 @@
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Plantillas de newsletter</h1>
-            <ul class="list-group">
-                <li class="list-group-item" ng-repeat="template in templateList track by $index">
-                    <h4 class="list-group-item-heading"><a href="" ng-click="change(template)">{[{ template.name }]}</a></h4>
-                    <p class="list-group-item-text">{[{ template.description }]}</p>
-
-
-                </li>
-            </ul>
-        </div>
+<md-toolbar class="md-hue-2">
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+            <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        </md-button>
+        <h2>
+            <span>Plantillas de newsletters</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+            <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+        </md-button>
     </div>
-</div>
+</md-toolbar>
+<md-content layout="row" class="page-container" style="padding: 20px;">
+
+        <md-card flex class="template-card" ng-repeat="template in templateList track by $index">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{[{ template.name }]}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <p>{[{ template.description }]}</p>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="start center">
+                <md-button ng-click="change(template)">Editar</md-button>
+            </md-card-actions>
+        </md-card>
+</md-content>

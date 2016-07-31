@@ -1,6 +1,13 @@
-<div class="form-group ">
-    <label class="col-sm-2 control-label">{[{ content.name }]}</label>
-    <div class="col-sm-10">
-        <input ng-model="content.value" class="form-control">
-    </div>
-</div>
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">{[{ content.name }]}</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+        <md-input-container class="md-block">
+            <label>Texto</label>
+            <input ng-model="content.value">
+        </md-input-container>
+    </md-card-content>
+</md-card>

@@ -1,7 +1,7 @@
 (function (window, angular) {
     'use strict';
 
-    angular.module('App', ['ngRoute','ngSanitize', 'ngCkeditor', 'colorpicker.module']);
+    angular.module('App', ['ngRoute','ngSanitize', 'ngCkeditor', 'colorpicker.module', 'ngMaterial']);
 
     angular.module('App').config(['$interpolateProvider', '$routeProvider', function ($interpolateProvider, $routeProvider) {
         // change default characters for interpolateion

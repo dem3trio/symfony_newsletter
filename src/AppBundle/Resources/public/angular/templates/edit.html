@@ -1,38 +1,48 @@
-<div class="row">
-    <div class="col-xs-5">
+<md-toolbar class="md-menu-toolbar">
+    <div layout="row">
+        <md-toolbar-filler layout layout-align="center center">
+            <md-icon md-svg-icon="call:chat"></md-icon>
+        </md-toolbar-filler>
+        <div>
+            <h2 class="md-toolbar-tools">Nombre de plantilla</h2>
+            <md-menu-bar>
+                <md-menu>
+                    <button ng-click="changeRoute('#/index')">
+                        Volver
+                    </button>
+                </md-menu>
+                <md-menu>
+                    <button ng-click="reloadPreview()">
+                        Exportar
+                    </button>
+                </md-menu>
+                <md-menu>
+                    <a  class="md-menu-bar-button" ng-href="{[{getIframeSrc(token)}]}" target="_blank">
+                        Preview
+                    </a>
+                </md-menu>
+            </md-menu-bar>
+        </div>
+    </div>
+</md-toolbar>
+<md-content class="page-container" layout="row">
+    <div flex="40">
         <div class="editor" style="padding: 20px;">
-            <div class="row" style="margin-bottom: 18px">
-                <div class="col-xs-6">
-                    <div class="btn-group" role="group">
-                        <button ng-click="changeRoute('#/index')" type="button" class="btn btn-default">Volver</button>
-                    </div>
-                </div>
-                <div class="col-xs-6">
-                    <div class="btn-group" role="group">
-                        <a ng-href="{[{getIframeSrc(token)}]}" type="button" class="btn btn-primary" target="_blank">Exportar</a>
-                        <button type="button" ng-click="reloadPreview()" class="btn btn-default">Preview</button>
-                    </div>
-                </div>
-            </div>
-            <form class="form-horizontal">
+            <form>
                 <editor-type ng-repeat="item in variables" content="item"></editor-type>
-
             </form>
         </div>
     </div>
-    <div class="col-xs-7">
-        <iframe style="height: 100%; width:100%" id="iframe" ng-src="{[{getIframeSrc(token)}]}"></iframe>
+    <div class="page" flex="60" style="padding: 20px;">
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Preview</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <iframe id="preview-iframe" ng-src="{[{getIframeSrc(token)}]}"></iframe>
+            </md-card-content>
+        </md-card>
     </div>
-</div>
-<script>
-
-    function resizeIframe() {
-        jQuery("#iframe").css('height', $(window).height()+'px');
-    }
-
-    resizeIframe();
-
-    jQuery(window).on('resize', function(){
-        resizeIframe();
-    });
-</script>
+</md-content>

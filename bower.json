@@ -1,21 +1,22 @@
 {
-    "name": "symfony2-newsletters",
-    "description": "Bower configuration for symfony2-newsletters",
-    "private": true,
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "tests",
-        "src"
-    ],
-    "dependencies": {
-        "angular": "^1.4",
-        "angular-route" : "^1.4",
-        "jquery": "http://code.jquery.com/jquery-1.10.1.js",
-        "bootstrap": "^3.3",
-	    "angular-sanitize": "^1.4",
-        "ng-ckeditor": "^0.2",
-        "angular-bootstrap-colorpicker": "^3.0",
-        "ckeditor": "#full/stable"
-    }
+  "name": "symfony2-newsletters",
+  "description": "Bower configuration for symfony2-newsletters",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "tests",
+    "src"
+  ],
+  "dependencies": {
+    "angular": "^1.4",
+    "angular-route": "^1.4",
+    "jquery": "http://code.jquery.com/jquery-1.10.1.js",
+    "bootstrap": "^3.3",
+    "angular-sanitize": "^1.4",
+    "ng-ckeditor": "^0.2",
+    "angular-bootstrap-colorpicker": "^3.0",
+    "ckeditor": "#full/stable",
+    "angular-material": "^1.0.9"
+  }
 }
